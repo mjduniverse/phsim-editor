@@ -1,0 +1,737 @@
+.bbb {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  body, html {
+    margin: 0;
+    color: white;
+    background-color: #666;
+    background: radial-gradient(#2d2d2d, #666);
+    background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 14px;
+  }
+
+  /** Button **/
+  
+  .button {
+    display: inline-block;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  
+  input {
+      background-color: #333;
+      border: 1px solid transparent;
+      padding: 5px;
+      color: white;
+      border: 1px solid #777;
+      padding: 10px;
+      font-size: inherit;
+      border-radius: 10px;
+  }
+  
+  
+  .frame {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+  }
+
+  a {
+    color: orange;
+  }
+  
+  .leftSection {
+      float: left;
+      height: 100%;
+      width: 800px;
+  }
+  
+  .rightSection {
+      float: right;
+      width: 33%;
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+  
+  .canvasFrame {
+      background-color: #333;
+      text-align: center;
+      margin: 10px;
+  }
+  
+  .rightSelection input {
+      width: 100%;
+  }
+
+  /** 
+  
+  Window
+
+  **/
+  
+  .win, .superWin {
+    background-color: #333;
+    display: inline-block;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+  }
+  
+  .win h3 {
+      text-align: left;
+      padding: 10px;
+      margin: 0;
+      border-radius: 10px 10px 0 0;
+  }
+  
+  .win .winBody {
+      padding: 15px;
+      max-height: 400px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+
+  .htmlwin-min-button {
+    background-image: url(img/minimize.png);
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-size: 15px;
+    float: right;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+}
+
+.superWin .win {
+    background-color: #333;
+    width: 500px;
+    display: inline-block;
+    margin-top: 200px;
+}
+
+.superWin .htmlwin-h3-header {
+    margin-top: 0;
+    padding: 10px;
+    z-index: 100;
+    margin-bottom: 0;
+    text-align: left;
+    padding-left: 13px;
+}
+
+.winWrapper {
+    display: inline-block;
+    z-index: 101;
+}
+
+.winWrapper.superWin {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    height: 100%;
+    z-index: 1001;
+    right: 0;
+}
+
+.superWin.sl-settings {
+    margin-top: 300px;
+    min-width: 800px;
+    display: inline-block;
+}
+
+.superWin .winBody {
+    margin-top: 0;
+    text-align: left;
+}
+
+.superWin {
+    min-width: 400px;
+    display: inline-block;
+}
+  
+  .selectedObject {
+      display: none;
+      margin-left: 0;
+      color: white;
+  }
+  
+  .creationCtrls {
+      display: none;
+  }
+  
+  .testGame.button {
+      float: right;
+      margin: 10px;
+      position: relative;
+      bottom: 0;
+      right: 0;
+  }
+  
+  .statusBar {
+      float: left;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      background: #333;
+      width: 100%;
+  }
+  
+  .menu ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+  }
+  
+  .wrap {
+      background-color: #333;
+      display: block;
+      width: 100%;
+      z-index: 10;
+      padding: 4px;
+  }
+  
+  
+  li.item {
+      display: inline-block;
+  }
+  
+  ul.submenu {
+      background-color: #222;
+      display: none;
+      z-index: 1;
+      position: absolute;
+  }
+  
+  .item span {
+      padding: 10px;
+      display: inline-block;
+      border-right: 1px solid black;
+      padding: 10px 22px;
+  }
+  
+  .submenu li {
+      padding: 11px;
+      min-width: 100px;
+  }
+  
+  .submenu li:hover {
+      background-color: #111;
+      cursor: pointer;
+  }
+  
+  
+  
+  .layerList {
+      padding-left: 0;
+      list-style: none;
+  }
+  
+  .layerList li {
+      background-color: #353535;
+      display: grid;
+      /* padding: 5px; */
+  }
+  
+  .layerList li:hover {
+      background-color: blue;
+      cursor: pointer;
+  }
+
+   .layerList .label:hover {
+      background-color: #0c0c69;
+      cursor: pointer;
+  }
+  
+  .layerList li ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+      background-color: #222;
+  }
+  
+
+
+span.label {
+    padding: 8px;
+    display: block;
+    width: 300px;
+    border: 5px solid transparent;
+}
+
+span.subelement {
+    padding: 5px;
+}
+
+.win.superLayerSelection {
+    min-width: 300px;
+}
+
+.layerLabelButton {
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.removeSuperlayerButton.layerLabelButton {
+    background-color: red;
+}
+
+.layertree {
+    list-style: none;
+}
+
+.layertree ul {
+    list-style: none;
+}
+
+.branch.superlayer {
+    background-color: #333;
+}
+
+.branch.layer {
+    background-color: #444;
+}
+
+.layer-list-gui-elm {
+    background-color: #333;
+    display: block;
+    padding: 10px;
+    width: 250px
+}
+
+.selected-layer-gui-elm {
+    background-color: orange;
+}
+
+.aside {
+    z-index: 1000;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: #333;
+    height: 100%;
+    box-shadow: 0 0 10px #222;
+    top: 0;
+}
+
+#msg {
+    margin: 20px;
+}
+
+.panel {
+    display: none;
+}
+
+.context-menu-ph {
+    background-color: #333;
+    padding: 5px;
+    box-shadow: 0 0 10px #333;
+}
+
+.context-menu-ph div {
+    padding: 4px 15px;
+}
+
+.context-menu-ph div:hover {
+    background-color: orange;
+}
+
+/*** 
+
+X-selection menu
+
+***/
+
+.x-selection-menu-button {
+    float: right;
+}
+
+.x-selection-menu-list {
+    display: none;
+}
+
+.x-selection-menu-list.opened {
+    display: inline-block;
+    position: absolute;
+    width: inherit;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #222;
+    overflow-y: scroll;
+    height: 200px;
+    z-index: 1;
+}
+
+.x-selection-menu-field {
+    background-color: #111;
+    padding: 10px;
+}
+
+.x-selection-menu-field:after {
+    padding: 5px;
+    content: "\25BC";
+    font-size: 14px;
+    margin: 3px;
+}
+
+ul.x-selection-menu-list.opened li {
+    padding: 15px;
+    cursor: default;
+}
+
+ul.x-selection-menu-list.opened li:hover {
+    background-color: #111;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.lselect {
+    display: inline-block;
+}
+
+.lselect .x-selection-menu-container {
+    display: inline-block;
+    /* padding: 10px; */
+}
+
+.gui-tabber-panel {
+    background-color: #444;
+    width: 800px;
+    padding: 10px;
+    height: 600px;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+}
+
+.object-editor .winBody {
+    min-width: 800px;
+    min-height: 600px;
+    text-align: left;
+    padding: 12px;
+}
+
+li.gui-tabber-tab.selected {
+    background-color: #444;
+}
+
+li.gui-tabber-tab {
+    background-color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+.button-1 {
+    background-color: #222;
+    display: inline-block;
+    padding: 10px;
+    background: linear-gradient(to bottom,#0e0e0e,#252525);
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+.htmlwin-close-button {
+    background-image: url("img/cross-1.png");
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background-size: 15px;
+    float: right;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.addPath_glyph {
+    background-image: url("img/m-poly-1.png");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 20px 20px;
+}
+
+.addCircle_glyph {
+    background-image: url("img/circle-1.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px 20px;
+}
+
+.addRectangle_glyph {
+    background-image: url("img/square-1.png");
+    background-size: 25px;
+    padding: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.addRegpoly_glyph {
+    background-image: url("img/regpolygon-1.png");
+    background-size: 25px;
+    padding: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.button-2-glyph {
+    display: inline;
+}
+
+.button-2 {
+    display: inline-block;
+    background-color: #222;
+    padding: 10px 7px;
+    background-image: linear-gradient(to bottom,#000000,#252525);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ui-resizable-handle.ui-resizable-se.ui-icon.ui-icon-gripsmall-diagonal-se {
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize;
+}
+
+.ui-resizable-handle.ui-resizable-w {
+    background: transparent;
+    width: 21px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    cursor: w-resize;
+}
+
+/*** Color Form ***/
+
+.colorRange {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: grey;
+    opacity: 0.6;
+    height: 6px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 400px;
+    border: 0;
+    box-shadow: none;
+    padding: 0px;
+ }
+ 
+ .colorRange::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 10px;
+   height: 20px;
+   background: orange;
+   border-radius: 2px;
+ }
+ 
+ .colorRange.red {
+   background-color: red;
+ }
+ 
+ .colorRange.green {
+   background-color: green;
+ }
+ 
+ .colorRange.blue {
+   background-color: blue;
+ }
+ 
+ .rgbLabel {
+   display: inline-block;
+   width: 50px;
+ }
+ 
+ .clrCanvas {
+   display: block;
+   width: 100%;
+   height: 126px;
+ }
+ 
+ .hexInput {
+   margin: 10px;
+   font-size: 20px;
+   display: inline-block;
+ }
+
+ .colorfield-container {
+    padding: 12px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #666;
+    cursor: pointer;
+}
+
+.colorfield-button {
+    float: right;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.canvaseditor-body {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .gradienteditor-label {
+    width: 100px;
+    display: inline-block;
+  }
+  
+  .stoppoint-draggable {
+    background: grey;
+  }
+  
+  .stoppoints-area {
+    height: 10px;
+    position: relative;
+  }
+  
+  .selected-grad-elm {
+    background-color: #444
+  }
+
+  .grad-exp-element {
+    padding: 10px;
+}
+
+.grad-element-label {
+    display: inline-block;
+}
+
+.grad-element-edit-button {
+    float: right;
+    background-color: orange;
+    display: inline-block;
+}
+
+.phsim-widget-editors {
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.phsim-widget-panel {
+    height: inherit;
+}
+
+.widget-form-title-h3 {
+    border-bottom: 1px solid #666;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.gui-tabber-panel textarea {
+    background-color: #333;
+    color: white;
+    border: none;
+    display: block;
+    width: inherit;
+}
+
+.gui-tabber-panel .x-selection-menu-field {
+    background-color: #333;
+}
+
+.h-button {
+    background-color: green;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: url("./img/phsim-play-1.svg");
+    background-size: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+form.widget-form {
+    position: relative;
+}
+
+
+
+/* wFunction code font size */
+
+#wfunction-code {
+    font-size: 19px;
+}
+
+.x-selection-menu-label {
+    cursor: default;
+}
+
+/** Play Glyph **/
+
+.play-glyph {
+    padding: 13px;
+    background-image: url("./img/phsim-play-1.svg");
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/** JSON viewer **/
+
+.json-viewer .winBody {
+    overflow: hidden;
+    height: 100%;
+}
+
+.json-viewer textarea {
+    background: #222;
+    color: #eee;
+    border: none;
+    width: 100%;
+    height: 350px;
+}
+
+#editing-bar {
+    background-color: #333;
+    padding: 10px;
+}
+
+.selection-1 {
+    background: #222;
+    color: white;
+    padding: 10px;
+}
+
+.selection-1 option {
+    background: #222;
+    padding: 10px;
+}

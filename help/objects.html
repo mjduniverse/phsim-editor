@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Objects | PhSim Editor Help</title>
+
+    <link rel="stylesheet" href="./style.css"></head>
+
+    <meta name="description" content="Learn how to work with objects in the PhSim editor."/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&amp;display=swap" rel="stylesheet">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46950909-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46950909-1');
+    </script>
+
+</head>
+<body>
+<h1>Objects</h1>
+
+<p>Objects are the basic building block of a PhSim simulation.</p>
+
+<p>
+    The main objects that can be added to a simulation are circles, rectangles, polygons 
+    and regular polygons. These can have various extensions known as widgets that extend
+    their functionality.
+</p> 
+
+<div class="toc">
+    <h2>Table of Contents:</h2>
+    <ol>
+        <li><a href="#adding_objects">Adding objects</a></li>
+        <li><a href="#object_names">Object Names</a></li>
+        <li><a href="#mass_density">Mass & Density</a></li>
+        <li><a href="#collision_classes">Collision Classes</a></li>
+        <li><a href="#fill_color">Fill Color</a></li>
+        <li>
+            <a href="#widgets">Widgets</a>
+            <ol>
+                <li><a href="#widget_keyboardControls">keyboardControls</a></li>
+                <li><a href="#widget_setColor">setColor</a></li>
+                <li><a href="#widget_circularConstraint">circularConstraint</a></li>
+                <li><a href="#widget_clone">clone</a></li>
+                <li><a href="#widget_draggable">draggable</a></li>
+                <li><a href="#widget_toggleLock">toggleLock</a></li>
+                <li><a href="#widget_toggleSemiLock">toggleSemiLock</a></li>
+                <li><a href="#widget_velocity">velocity</a></li>
+                <li><a href="#widget_translate">translate</a></li>
+                <li><a href="#widget_position">position</a></li>
+                <li><a href="#widget_rotation">rotation</a></li>
+                <li><a href="#widget_setAngle">setAngle</a></li>
+                <li><a href="#widget_force">force</a></li>
+                <li><a href="#widget_objLink">objLink</a></li>
+                <li><a href="#widget_elevator">elevator</a></li>
+                <li><a href="#widget_keyboardControls">keyboardControls</a></li>
+                <li><a href="#widget_transformCameraByObj">transformCameraByObj</a></li>
+                <li><a href="#widget_setColor">setColor</a></li>
+                <li><a href="#widget_setBorderColor">setBorderColor</a></li>
+                <li><a href="#widget_setLineWidth">setLineWidth</a></li>
+                <li><a href="#widget_deleteSelf">deleteSelf</a></li>
+                <li><a href="#widget_constraint">constraint</a></li>
+                <li><a href="#widget_setImgSrc">setImgSrc</a></li>
+                <li><a href="#widget_transformAgainstCamera">transformAgainstCamera</a></li>
+                <li><a href="#widget_playAudio">playAudio</a></li>
+                <li><a href="#widget_noRotation">noRotation</a></li>
+                <li><a href="#widget_wFunction">wFunction</a></li>
+                <li><a href="#widget_rectText">rectText</a></li>
+            </ol>
+        </li>
+        <li><a href="#locked_semilocked">Locked & Semi-Locked objects</a></li>
+        <li>
+            <a href="#sprites">Sprites</a>
+            <ol>
+                <li><a href="#adding_sprites">Adding Sprites</a></li>
+                <li><a href="#sprite_editing_form">Sprite Editing Form</a></li>
+            </ol>
+        </li>
+    </ol>
+</div>
+
+<h2 id="adding_objects">Adding Objects</h2>
+<h3>Adding circles</h3>
+<p>The main way to add circles is to do the following:</p>
+
+<ol>
+    <li>Click the <span class="button-2"><span class="gl_1 addCircle_glyph"></span></span> button.</li>
+    <li>Click on a point in space to determine the center of the circle.</li>
+    <li>Drag the mouse around. A circle should appear to give a preview for the radius.</li>
+    <li>To finalize the radius, click on a point again.</li>
+</ol>
+
+<h3>Adding rectangles</h3>
+
+<h3>Adding regular polygons</h3>
+
+<p>The main way to add regular polygons is to do the following:</p>
+
+<ol>
+    <li>Click the <span class="button-2"><span class="gl_1 addRegpoly_glyph"></span></span> button.</li>
+    <li>Click on a point in space to determine the center of the circle.</li>
+    <li>Drag the mouse around. A circle should appear to give a preview for the radius.</li>
+    <li>To finalize the radius, click on a point again.</li>
+</ol>
+
+<p>Note: adding a regular polygon is mostly the same as adding a circle.</p>
+
+<h3>Adding polygons</h3>
+
+<ol>
+    <li>Click on <span class="button-2"><span class="gl_1 addPath_glyph_glyph"></span></span> button.</li>
+    <li>Click on a point in space to add a point. There should be a preview with a red border.</li>
+    <li>Double click to add polygon.</li>
+</ol>
+
+<h2 id="object_names">Object Names</h2>
+<p>The name of an object is an optional feature that is used to identify an object.</p>
+
+<h2 id="mass_density">Mass & Density</h2>
+<p>In the PhSim editor, the mass of an object can be deterimined by two ways:</p>
+<ul>
+    <li>
+        Setting density: Under the header "Mass Settings", there is a field titled 
+        "Density". When this is set, it is multiped by the area to give the mass.
+    </li>
+
+    <li>Setting mass directly: If the field titled "Mass" is set to a number, it overrides
+        the density to set the mass directly. To use density to determine mass, leave this
+        value blank.
+    </li>
+</ul>
+
+<p class="note">
+    <strong>Note:</strong> Density in PhSim simulations is not defined in mass per volume, 
+    but mass per area. This is because it is a 2D simulation.
+</p>
+
+<h2 id="collision_classes">Collision Classes</h2>
+
+<p>
+    The way objects interact can be changed using collision classes. 
+    Collision classes are seperated by spaces. For instance, the string 
+    <code>class1 class2</code> contains the sensor classes <code>class1</code>
+    and <code>class2</code>.
+</p>
+
+<p>If two objects have collision classes defined and they share at least one collision class, 
+    they will collide. However, if the two objects have collision classes and share none, 
+    then they will not collide.If there are no collision classes in an object, then it 
+    will collide with any object.
+</p>
+
+<p>Please note that any object that has collisions disabled will not collide with anything,
+    regardless of the collision classes they have.
+</p>
+
+<p>To edit the collision classes of an object, do the following:</p>
+
+<ol>
+    <li>Right click on an object</li>
+    <li>Click on "Object Properties"</li>
+    <li>Click on the "Main Settings" tab</li>
+    <li>Enter in the coliision class names, seperated by spaces</li>
+    <li>
+        lose the window. They should save automatically. 
+        That is why there is no save button.
+    </li>
+</ol>
+
+
+<h2 id="sensor_classes">Sensor Classes</h2>
+
+<p>
+    In PhSim, a sensor is a feature that is used to make certain things happen when they touch.
+    Sensor classes are implemented using a string seperated by spaces. When two objects
+    that share at least one 
+</p>
+
+<h2 id="fill_color">Fill Color</h2>
+<p>Each object has the ablity to filled with a solid color. It can be edited in to ways:</p>
+<ol>
+    <li>The upper bar</li>
+    <li>The object editor</li>
+</ol>
+
+<p>To change the fill color in the </p>
+
+<h2 id="widgets">Widgets</h2>
+<p>Widgets are features that can be added or removed to the object. They can be edited in the following way:</p>
+<ol>
+    <li>Right click on an object</li>
+    <li>Select "Object Properties" on the dialog menu</li>
+    <li>Click on the "widgets" tab</li>
+</ol>
+
+<p>
+    For a more technical discussion involving the phsim library, see the phsim 
+    documentation on the <code><a href="https://dev.mjduniverse.com/phsim/docs/PhSim.Widgets.html">PhSim.Widgets</a></code> namespace.
+</p>
+
+<h3 id=widget_keyboardControls>keyboardControls</h3>
+<p>The keyboardControls widget makes an object move in a certain direction guided by the arrow keys.</p>
+
+<p>Here are the possible directions:</p>
+
+<ul>
+    <li>Up</li>
+    <li>Down</li>
+    <li>Left</li>
+    <li>Right</li>
+</ul>
+
+<h3 id="widget_setColor">setColor</h3>
+<p>The setColor widget is used to set the color of the object. 
+It is one of the wFunction based widgets. This means it can be triggered by means such
+as clicking the object.</p>
+
+<h3 id="widget_circularConstraint">circularConstraint</h3>
+<p>
+    The circular constraint widget is a special kind of constraint. If an object moves, then
+    the angle of the object is set to the angle that specifies the direction of the constraint.
+
+    It is defined by point in space.
+</p>
+<h3 id="widget_clone">clone</h3>
+
+<p>
+    The clone widget makes an object copy itself. It is a wFunction based widget. It can be triggered by things like
+    keys and sensors.
+</p>
+
+<h3 id="widget_draggable">draggable</h3>
+
+<p>The draggable widget allows one to drag any dynamic object that is not locked.</p>
+
+<h3 id="widget_toggleLock">toggleLock</h3>
+
+<p>The toggleLock widget makes an object lock or unlock. It is a wFunction based widget.</p>
+
+<h3 id="widget_toggleSemiLock">toggleSemiLock</h3>
+
+<p>The toggleSemiLock widget reverses the object's semi-lock status. It is a wFunction based widget.</p>
+
+<h3 id="widget_velocity">velocity</h3>
+
+<p>
+    The velocity widget makes a dynamic object go at a certain velocity. They can either
+    be edited by the mouse by dragging an orange arrow or using the widget editor in the 
+    object editor.
+
+    They are a widget based on the wFunction widget. This means that they can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_translate">translate</h3>
+
+<p>The translation widget makes an object translate by some vector. They can either
+    be edited by the mouse by dragging an orange arrow or using the widget editor in the 
+    object editor.</p>
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_position">position</h3>
+<h3 id="widget_rotation">rotation</h3>
+
+<p>The rotation widget rotates an object by some angle.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_setAngle">setAngle</h3>
+
+<p>Sets the angle of a unlocked dynamic object.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_force">force</h3>
+
+<p>The force widget exerts a force on the object if it is triggered in a certain way.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_objLink">objLink</h3>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_elevator">elevator</h3>
+
+<p>
+    The elevator widget makes an object go in a certain direction and then go in the opposite
+    direction when it reaches some limit.
+</p>
+
+<p>The elevator's range is defined by bounds. Here are the types of bounds:</p>
+
+<ul>
+    <li>
+        x-bounded: If the x-coordinate of the elevator is equal to one of the x-coordinates 
+        of the bounding points, then the direction is reversed.
+    </li>
+
+    <li>
+        y-bounded: If the y-coordinate of the elevator is equal to one of the y-coordinates 
+        of the bounding points, then the direction is reversed.
+    </li>
+</ul>
+
+<h3 id="widget_transformCameraByObj">transformCameraByObj</h3>
+
+<p>The transformCameraByObj widget makes the camera move whenever the object moves.</p>
+
+<h3 id="widget_setColor">setColor</h3>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_setBorderColor">setBorderColor</h3>
+
+<p>The setBorderColor widget changes the solid fill color for the object's border.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_setLineWidth">setLineWidth</h3>
+
+<p>The setLineWidth widget sets the thickness of the border of an object.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_deleteSelf">deleteSelf</h3>
+
+<p>The deleteSelf widget makes an object delete itself if it is triggered in a certian way.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_constraint">constraint</h3>
+
+<p>The constraint widget adds a constraint to an object as the name suggests.</p>
+
+<h3 id="widget_setImgSrc">setImgSrc</h3>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<h3 id="widget_transformAgainstCamera">transformAgainstCamera</h3>
+
+<p>
+    The transformAgainstCamera widget makes an unlocked dynamic object go in the opposite
+    direction of the camera when it changes. This makes it look like it is not moving at
+    all.
+</p>
+
+<h3 id="widget_playAudio">playAudio</h3>
+
+<p>The playAudio widget makes audio play.</p>
+
+<p>
+    It is a widget based on the wFunction widget. This means that it can be triggered
+    by updates, time intervals, first updates, updates, sensors, clicking and among other
+    things.
+</p>
+
+<p>Audio can be looped.</p>
+
+<h3 id="widget_noRotation">noRotation</h3>
+
+<p>Makes an object not rotate.</p>
+
+
+<h3 id="widget_wFunction">wFunction</h3>
+
+<p class="warning">
+    <strong>Note:</strong> This contains many details that are techinical. Using this 
+    widget and understanding it requires knowlege of JavaScript.
+
+    Do not use JavaScript that you do not know if you can trust. Some JavaScript can be
+    used to utilize attacks by hackers.
+
+</p>
+
+<p>
+    The wFunction (Widget function) widget allows one to call a piece of JavaScript based on one of the 
+    following triggers:
+</p>
+
+<ul>
+    <li>When a certain key is pressed</li>
+    <li>When the first update of the simulation is executed</li>
+    <li>Whenever an update is executed</li>
+    <li>Whenever an objLink that is connected to the object is triggered</li>
+    <li>When the object is clicked</li>
+    <li>When the mouse is let go of and the mouse is over the object</li>
+    <li>When any object in general is clicked</li>
+</ul>
+
+<p>To create a wFunction for an object, do the following:</p>
+
+<ul>
+    <li>Right click on an object</li>
+    <li>Click on "Object Properties"</li>
+    <li>When the Object Editor opens, click on the "widgets" tab</li>
+    <li>Scroll down the dropdown menu until you find an option named "Widget Function".</li>
+    <li>Click on "Widget Function"</li>
+    <li>Press "Add Widget".</li>
+    <li>A form titled "wFunction" should appear.</li>
+</ul>
+
+<p>
+    Once the wFunction widget is created, one can edit the code by pressing the "Widget
+    Function Editor" button. Here is what it should look like:
+</p>
+
+<img src="./images/wfunction-editor-screenshot.png" alt="wFunction editor window">
+
+<p>Here are some important things to note about the code:</p>
+
+<ul>
+    <li>
+        The code that is in the editor is wrapped inside a function. This means that all
+        variables that are declared in the code are local.
+    </li>
+    <li>
+        If the wFunction widget is added to an object, the <code>this</code> keyword
+        refers to the DynObject instance that will be created when the simulation runs. 
+        For example, <code>this.phsim</code> would refer to the parent PhSim object instance.
+    </li>
+    <li>
+        If the wFunction widget is added to the simulation, the <code>this</code> keyword
+        refers to the PhSim instance.
+    </li>
+</ul>
+
+<p>
+    Many widgets operate on top of the wFunction widget. These are known as wFunction
+    based widgets. They can be triggered in the same exact same way as wFunctions. 
+</p>
+
+<h3 id="widget_rectText">rectText</h3>
+<p>
+    The rectText widget allows one to add rectangles to rectangles. In the widget editing 
+    form, there are several options for editing:
+</p>
+
+<ul>
+    <li>Text: The contents of the rectText widget. This can include magic words.</li>
+    <li>Font Size: The size of the text in pixels.</li>
+    <li>Font Fill Color:</li>
+    <li>Border Color:</li>
+    <li>Border Width:</li>
+    <li>Font Face: The font.</li>
+</ul>
+
+<p>Here is a screenshot of the editing form for reference:</p>
+
+<img src="./images/rectText-form-screenshot.png" alt="A screenshot of a rectText editing form.">
+
+<p>The content of the rectText can have magical words. Here they are:</p>
+
+<ul>
+    <li>{__game__score}: Displays game score if game widget is added to simulation.</li>
+    <li>{__game__life}: Displays game life if game widget is added to simulation.</li>
+    <li>{__game__goal}: Displays game goal if game widget is added to simulation.</li>
+    <li>{__game__int_life}: Displays inital game life if game widget is added to simulation.</li>
+    <li>{__game__int_score}: Display's inital game score if game widget is added to simulation.</li>
+</ul>
+
+<p>
+    For example, if the content of the rectText is <code>Score: {__game__score}</code>,
+    then it would display as "Score: 5" if the game's score is 5.
+</p>
+
+<h2 id="locked_semilocked">Locked & Semi-Locked objects</h2>
+
+<p>A dynamic object could be locked or semi-locked. Here are the differences:</p>
+
+<ul>
+    <li><strong>Locked: </strong>A locked object is an object that cannot be moved in any way.</li>
+    <li>
+        <strong>Semi-locked: </strong>A semi-locked object cannot be moved by forces and acceleration changes.
+        However, they can be moved by displacement and position changes.
+    </li>
+</ul>
+
+<h2 id="sprites">Sprites</h2>
+
+<h3 id="adding_sprites">Adding Sprites</h3>
+To add a sprite, one must do the following:
+
+<ol>
+    <li>Open the Object Editor</li>
+    <li>Go to the "graphics settings" tab</li>
+    <li>Under the "sprites" header, click the "add sprite" button</li>
+</ol>
+
+<p>When a sprite is added to the object, the sprite editing form should appear</p>
+
+<h3 id="sprite_editing_form">Sprite Editing Form</h3>
+
+<p>Here is what the form for editing sprites should look like:</p>
+
+<img src="./images/sprite-editing-form.png" alt="Sprite Editing Form">
+
+<ul>
+    <li>Name Field: Sprite name</li>
+    <li>Source Field: External URL for sprite</li>
+    <li>Width: The width of the sprite</li>
+    <li>Height: The height of the sprite</li>
+    <li>Smoothness Checkbox: Enable or disable smoothing. Disable if using pixel art.</li>
+    <li>Repeat Checkbox: Make the sprite a repeating pattern for the object.</li>
+    <li>"Go To Current Source" button: A button that opens up a window to any external source</li>
+    <li>"Upload Sprite" button: A button that is used to upload sprites to embed it into the project.</li>
+    <li>"Set New URL" button: A button used to set external sources</li>
+    <li>"Delete" button: A button to delete the sprite</li>
+</ul>
+
+</body>
+</html>

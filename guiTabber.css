@@ -1,0 +1,24 @@
+ul.gui-tabber-tabs {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0;
+    display: inline-block;
+}
+
+li.gui-tabber-tab {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ccc;
+}
+
+li.gui-tabber-tab.selected {
+    background-color: #ddd;
+}
+
+
+.gui-tabber-panel {
+    background-color: #aaa;
+    width: 400px;
+    padding: 10px;
+    height: 200px;
+}

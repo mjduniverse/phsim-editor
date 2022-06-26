@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/decomp-2.js"></script>
+        <script src="js/matter.js"></script>
+        <script class="main-script" src="js/phsim.js"></script>
+
+        <style>
+         body {
+                margin: 0;
+                font-family: arial;
+                background: #222
+            }
+
+            .test-buttons {
+                text-align: center;
+                color: white;
+                padding: 10px;
+            }
+
+            .test-button {
+                cursor: pointer;
+                background: orangered;
+                padding: 5px 20px;
+            }
+
+            #testing-area {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .err-log {
+                width: 100%;
+                background: #333;
+                bottom: 0;
+                position: absolute;
+                height: 205px;
+                overflow-y: scroll;
+                color: white;
+            }
+
+            .err-msg {
+                padding: 15px 7px;
+                margin: 12px;
+                background: darkred;
+                border-radius: 4px;
+                font-family: monospace;
+            }
+        </style>
+
+    </head>
+
+    <div id="testing-area">
+
+    </div>
+
+    <body>
+        <script>
+
+            var phSim;
+            var unloadedErrorElements = [];
+            var errDiv;
+            var documentLoaded = false;
+
+            //window.opener = window.parent;
+
+            // Function for updating error counts
+
+
+
+            // Function for adding error notices
+
+
+            if(!window.opener || !window.opener.session) {
+                alert("Session not defined.")
+                throw "Session not defined";
+            }
+
+
+            var simI = window.opener.session.simulationI;
+
+            //o.gotoSimulationIndex(simI);
+
+            window.addEventListener("load",function(){
+
+                documentLoaded = true;
+
+                document.querySelector(".reload-sim").addEventListener("click",function(){
+                    o.gotoSimulationIndex(simI);
+                });
+
+                document.querySelector(".toggle-sim").addEventListener("click",function(){
+                    o.toggle();
+                });
+
+                var o = PhSim.createContainer(window.opener.session.sim_dir);
+                phSim = o;
+
+                window.opener.session.iframe_sim_test_ref = o;
+
+                document.getElementById("testing-area").appendChild(o.container);
+
+                o.play();
+
+            });
+
+        </script>
+        
+        <div class="test-buttons">
+            <span class="reload-sim test-button">Reload</span>
+            <span class="toggle-sim test-button">Toggle</span>
+            <span class="divider">|</span>
+        </div>
+
+    </body>
+</html>

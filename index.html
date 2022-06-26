@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>PhSim Editor</title>
+
+<meta name="description" content="Create a 2D physics simulation using polygons and widgets. No coding knowlege required."></meta>
+<script defer src="./js/jszip.js"></script>
+<script defer src="js/rectangleFrame.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script id="poly-decomp-script" src="./js/decomp-2.js"></script>
+<script defer src="./js/clipboard.min.js"></script>
+<script id="matter-script" defer src="./js/matter.js"></script>
+<script id="phsim-script" defer src="./js/phsim.js"></script>
+<script class="main-script" defer src="./dist/main.js"></script>
+<script defer src="js/guiTabber.js"></script>
+<script defer src="./js/ace-builds-1.4.12/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script defer src="./js/ace-builds-1.4.12/src-noconflict/ext-language_tools.js"></script>
+<script defer src="./js/simTest.js"></script>
+<script defer src="./js/FileSaver.min.js"></script>
+
+<link rel="stylesheet" href="guiTabber.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+
+</head>
+	<body>
+		<!--<nav style="z-index: 10000000;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+				<ul class="navbar-nav">
+					
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  File
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+					  <li><a class="dropdown-item new-file" href="#">New</a></li>
+					  <li><a class="dropdown-item open-file" href="#">Open</a></li>
+					  <li><a class="dropdown-item save-file" href="#">Save</a></li>
+					  <li><br class="dropdown-divider" href="#"></br></li>
+					  <li><a class="dropdown-item export-file" href="#">Export</a></li>
+					</ul>
+				  </li>
+
+				  
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  Run
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+					  <li><a class="dropdown-item run-composite" href="#">Run As Composite Simulation</a></li>
+					  <li><a class="dropdown-item" href="#">Run Simulation Individually</a></li>
+					</ul>
+				  </li>
+
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  Edit
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+					<li><br class="dropdown-divider" href="#"></br></li>
+					  <li><a class="dropdown-item" href="#">Add Polygon</a></li>
+					  <li><a class="dropdown-item" href="#">Add Circle</a></li>
+					  <li><a class="dropdown-item" href="#">Add Rectangle</a></li>
+					  <li><a class="dropdown-item" href="#">Add Regular Polygon</a></li>
+					  <li><br class="dropdown-divider" href="#"></br></li>
+					  <li><a class="dropdown-item" href="#">Simulation Settings</a></li>
+					  <li><a class="dropdown-item" href="#">Add Simulation</a></li>
+					  <li><br class="dropdown-divider" href="#"></br></li>
+					  <li><a class="dropdown-item" href="#">Composite Settings</a></li>
+					</ul>
+				  </li>
+
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  View
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+					  <li><a class="dropdown-item" href="#">Color Bar</a></li>
+					  <li><a class="dropdown-item" href="#">Status Bar</a></li>
+					  <li><a class="dropdown-item" href="#">Layer Bar</a></li>
+					  <li><a class="dropdown-item" href="#">Simulation Bar</a></li>
+					</ul>
+				  </li>
+
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  Help
+					</a>
+					<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+					  <li><a class="dropdown-item" href="#">Guide</a></li>
+					  <li><a class="dropdown-item" href="#">PhSim Documentation</a></li>
+					  <li><a class="dropdown-item" href="#">About</a></li>
+					</ul>
+				  </li>
+
+				</ul>
+			  </div>
+			</div>
+		  </nav>-->
+	<div class="header">
+		<div class="menu">
+			<ul class="wrap">
+				<li class="item">
+				<span>File</span>
+				<ul class="submenu">
+					<li class="file-new">New</li>
+					<li class="file-open">Open</li>
+					<li class="file-save">Save</li>
+					<li class="generate-zip">Export Simulation</li>
+				</ul>
+				</li>
+				<li class="item">
+				<span>Edit</span>
+				<ul class="submenu">
+					<li class="simulation-settings">Simulation Settings</li>
+					<li class="comp-settings">Composite Settings</li>
+				</ul>
+				</li>
+				<li class="item">
+				<span>Help</span>
+				<ul class="submenu">
+					<li class="guide">Guide</li>
+					<li class="phsim-docs">PhSim Documentation</li>
+					<li class="about">About</li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div id="editing-bar">
+
+			<div id="simulation-selection-area">
+				<span class="toolbar-label-1">Simulation:</span>
+					<select id="simulation-selection" class="selection-1">
+				</select>
+				<button id="sim-add-button" class="button-1">+</button>
+				<button id="sim-remove-button" class="button-1">-</button>
+				<button class="testGame button-2">
+					<span class="play-glyph button-2-glyph"></span>
+				</button>
+			</div>
+
+			
+			<div id="layer-selection-area">
+				<span class="toolbar-label-1">Layer:</span>
+					<select id="layer-selection" class="selection-1">
+				</select>
+				<button id="layer-add-button" class="button-1">+</button>
+				<button id="layer-remove-button" class="button-1">-</button>
+				<span id="shape-adding-buttons">
+					<button class="addPath button-2">
+						<span class="addPath_glyph button-2-glyph"></span>
+					</button>
+					<button class="addCircle button-2">
+						<span class="addCircle_glyph button-2-glyph"></span>
+					</button>
+					<button class="addRectangle button-2">
+						<span class="addRectangle_glyph button-2-glyph"></span>
+					</button>
+					<button class="addRegpoly button-2">
+						<span class="addRegpoly_glyph button-2-glyph"></span>
+					</button>
+				</span>
+			</div>
+
+
+		</div>
+
+		<div class="menu quick-settings">
+			<div class="wrap">
+				<div class="winBody">
+					<form class="ctrls">
+						Fill Color: <span class="fillcolor-ctrl"></span>
+						Stroke Color: <span class="strokecolor-ctrl"></span>
+						Line Width: <input type="number" min="0" value="4" class="lineWidth"></input>
+					</form>
+					<span style="display: none;" class="click-undo">[Undo]</span>
+					<span style="display: none;" class="click-redo">[Redo]</span>
+				</div>
+				<span style="display: none;" class="dynsim-edit h-button">Edit While Simulating</span>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+
+	</script>
+
+	<canvas class="bbb game">
+	</canvas>
+	
+
+	
+
+
+
+		<button class="clipboard-trigger" data-clipboard-action="copy" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js"></button>
+		
+		<div class="statusBar">
+			<span class="mousePos"></span>
+			<span id="msg">Welcome to PhSim! <br></span>
+			<div class="selection"></div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "electron": "^16.0.4",
+    "phsim": "^0.3.0-alpha",
+    "vm2": "^3.9.5"
+  }
+}
