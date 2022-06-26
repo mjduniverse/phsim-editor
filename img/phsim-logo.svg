@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="142.50749mm"
+   height="51.49374mm"
+   viewBox="0 0 142.50749 51.49374"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="phsim-logo.svg">
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect12"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="243.45011"
+     inkscape:cy="41.752563"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1280"
+     inkscape:window-height="960"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(20.323653,-71.732944)">
+    <g
+       id="g849">
+      <text
+         inkscape:transform-center-y="1.1692171"
+         inkscape:transform-center-x="-5.2614815"
+         id="text25"
+         y="112.95244"
+         x="38.614475"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.65510368px;line-height:1.25;font-family:FreeSerif;-inkscape-font-specification:'FreeSerif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.79138118"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.65510368px;font-family:FreeSerif;-inkscape-font-specification:'FreeSerif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#b3b3b3;stroke-width:0.79138118"
+           y="112.95244"
+           x="38.614475"
+           id="tspan23"
+           sodipodi:role="line">PhSim</tspan></text>
+      <path
+         inkscape:transform-center-y="-1.2264524e-06"
+         d="m 17.570457,111.85298 -8.4479142,4.97269 -10.191621,5.78885 -8.530438,-4.82976 -10.1090968,-5.93178 -0.08252,-9.80246 0.08252,-11.720622 8.447914,-4.972696 10.191621,-5.788845 8.5304381,4.82976 10.1090969,5.931781 0.08252,9.802452 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="0.99601479"
+         sodipodi:arg1="0.52359878"
+         sodipodi:r2="18.746609"
+         sodipodi:r1="21.523081"
+         sodipodi:cy="101.09144"
+         sodipodi:cx="-1.0690781"
+         sodipodi:sides="6"
+         id="path27"
+         style="fill:#4d4d4d;stroke:#000000;stroke-width:1.06500006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:type="star" />
+      <circle
+         r="2.9399648"
+         cy="101.09144"
+         cx="-0.80180424"
+         id="path837"
+         style="fill:#ff9900;fill-opacity:1;stroke:#ff9900;stroke-width:3.56500006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49253732" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path839"
+         d="M -1.0690781,101.09144 16.57071,78.640795"
+         style="fill:none;stroke:#ff9900;stroke-width:1.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:transform-center-y="1.415036"
+         transform="matrix(0.1529631,0.09443007,-0.09443007,0.1529631,18.943286,63.980489)"
+         inkscape:transform-center-x="1.2074127"
+         d="m 32.086316,30.955625 0.38079,-0.316966 24.308177,47.757163 0.08411,0.488256 -53.5130052,-2.827082 -0.4648953,-0.17129 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="-1.5153052"
+         sodipodi:arg1="-1.5270497"
+         sodipodi:r2="31.212198"
+         sodipodi:r1="30.87673"
+         sodipodi:cy="61.802814"
+         sodipodi:cx="30.735994"
+         sodipodi:sides="3"
+         id="path841"
+         style="fill:#ff9900;fill-opacity:1;stroke:none;stroke-width:1.86500001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:type="star" />
+    </g>
+  </g>
+</svg>
